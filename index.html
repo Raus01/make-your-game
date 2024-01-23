@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <script src="app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Basic Tetris</title>
+</head>
+<body>
+
+
+     <video id="bgvid" playsinline autoplay muted loop poster="https://chillex.ee/tetris/Depositphotos_551563342_S.jpg" >
+        <source src="https://chillex.ee/tetris/ukraine-flag.mp4" type="video/mp4">
+    </video>
+
+    <div class="displays">
+        <h3>&nbsp;Score: <span id="score">0 &nbsp;</span></h3>
+        <h3>&nbsp;Level: <span id="level">1 &nbsp;</span></h3>
+        <h3>&nbsp;Lives: <span id="lives">9 &nbsp;</span></h3>
+        <h3>&nbsp;Time left:  <span id="timer">10:00&nbsp;</span></h3>
+    </div>
+    
+    <div class="button-container">
+        <button id="start-button">Start/Pause</button>
+        <button id="reset-button">Reset</button>
+    </div>
+
+    <div class="mini-grid-container">
+        <div class="mini-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+   
+    
+  
+
+        </div><div class="container">
+            <div class="grid">
+            
+                <video id="grid-video" playsinline autoplay muted loop>
+                    <source src="https://chillex.ee/tetris/war_-_16391 (Original).mp4" type="video/mp4">
+                </video>
+                 
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>_</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: right">- -<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: center">oo<br>~</div>
+                <div style="text-align: center">- -<br>-</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: right">- o<br>-</div>
+                <div style="text-align: left">- -<br>~</div>
+                <div style="text-align: center">- o<br>~</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: center">o-<br>~</div>
+                <div style="text-align: right">o o<br>_</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>-</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">o o<br>-</div>
+                <div style="text-align: center">- -<br>~</div>
+                <div style="text-align: right">oo<br>~</div>
+                <div style="text-align: left">oo<br>-</div>
+                <div style="text-align: right">o-<br>~</div>
+                <div style="text-align: left">oo<br>~</div>
+                <div style="text-align: center">oo<br>~</div>
+            
+     
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+                <div class="taken"></div>
+            </div>
+        </div>
+
+
+</body>
+</html>
+
+
